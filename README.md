@@ -143,3 +143,144 @@ int main()
 
 }
 ```
+
+
+#第02週
+##進階題：大小寫轉換
+```C
+	#include <stdio.h>
+int main()
+{
+
+	char c;
+	while(scanf("%c", &c)==1)
+	{
+		if(c>='A' && c<='Z')
+		{
+			c+=32;
+			printf("%c", c);
+		}
+		else if(c>='a' && c<='z')
+		{
+			c-=32;
+			printf("%c", c);
+		}
+		else
+		{
+			printf("%c", c);
+		}
+	}
+}
+```
+##進階題：漸增數列相加
+```C
+#include <stdio.h>
+int main()
+{
+
+	int n, x=0;
+	scanf("%d", &n);
+	for(int i=n; i>=2; i--)
+	{
+		x=x+i*(i-1);
+	}
+	printf("%d\n", x);
+
+}
+```
+##進階題：計算陣列的平方值 
+```C
+#include <stdio.h>
+int main()
+{
+
+	int n, a[10];
+	scanf("%d", &n);
+	for(int i=1; i<=n; i++)
+	{ scanf("%d", &a[i]); }
+	
+	for(int i=1; i<=n; i++)
+	{
+		printf("%d,", a[i]*a[i]);
+	}
+	printf("\n");
+}
+```
+##進階題：2進位轉10進位
+```C
+#include <stdio.h>
+int main()
+{
+
+	int n, x=0, m=1;
+	scanf("%d", &n);
+	for(int i=1; i<=4; i++)
+	{
+		x+=n%10*m;
+		n/=10;
+		m*=2;
+	}
+	printf("%d\n", x);
+
+}
+```
+##基礎題：計算幾週與幾天 
+```C
+#include <stdio.h>
+int main()
+{
+
+	int n;
+	scanf("%d", &n);
+	printf("%d %d\n", n/7, n%7);
+
+}
+```
+##基礎題：計程車資計算 
+```C
+#include <stdio.h>
+int main()
+{
+
+	int n, x=100;
+	scanf("%d", &n);
+	x+=(n-2000)/500*5;
+	if(n%500!=0){ x+=5; }
+	printf("%d\n", x);
+
+}
+```
+##基礎題：兩數間可被5整除的整數
+```C
+#include <stdio.h>
+int main()
+{
+
+	int a, b;
+	scanf("%d%d", &a, &b);
+	if(b<a){ int t=a; a=b; b=t; }
+	while(a%5!=0)
+	{ a+=1; }
+	while(a<=b)
+	{
+		printf("%d\n", a);
+		a+=5;
+	}
+	
+}
+```
+##基礎題：整數間最大距離
+```C
+#include <stdio.h>
+int main()
+{
+
+	int a, b, c, t;
+	scanf("%d%d%d", &a, &b, &c);
+	if(a>b){ t=a; a=b; b=t; }
+	if(a>c){ t=a; a=c; c=t; }
+	if(b>c){ t=b; b=c; c=t; }
+	printf("%d\n", c-a);
+
+}
+```
